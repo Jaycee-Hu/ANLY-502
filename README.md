@@ -52,3 +52,55 @@ Next, some analysis was made on the book category by using spark sql. We took a 
 
 Table 1: Top rated books with top 100 review amount
 
+
+## 2.2 Models & Techniques
+After doing some exploratory data analysis, we dived into training machine learning methods. By observing the dataset, it is clear that 5 star-rating always corresponds with “great” review words. So we think there is a relationship between star-rating and review words that can be predicted by using machine learning models. And then, different machine learning models were attempted during the following steps.
+
+![Table 2](https://github.com/ikiwisline/ANLY-502/blob/master/images/Table%202.png)
+
+Table 2: Reviews’ characteristic of star-rating and words
+
+
+First, we did text representation, given that the classifiers and learning algorithms can not directly process the text documents in their original form, as most of them expect numerical feature vectors with a fixed size rather than the raw text documents with variable length. Thus, we tokenized the text to break the text up to words, and used StopWordsRemover to get off the stop words in English, which avoids the noisy features. Then, CountVectorizer was used to transform the text to matrix form. All of the process has been done using the existing SparkML and Pipeline library.
+
+Next step is data splitting, 75% of data is split as a training dataset and 25% of data is assigned as a testing dataset. Then some machine learning models are built, such as logistic regression, naïve bayes, random forest, decision tree, svm and so on. Logistic regression, naïve bayes, random forest and decision tree models were finished with their prediction accuracy. Among these four models, it is easy to find that naïve bayes fits the amazon dataset best, the accuracy is 55.1%.
+
+Given that naïve bayes have the highest prediction accuracy, we tried to tune this model by using ParamGrid and cross validation for parameters in naïve bayes. However, after tuning, the prediction accuracy only increases 0.001%.
+
+![Table 3](https://github.com/ikiwisline/ANLY-502/blob/master/images/Table%203.png)
+
+Table 3: Model Accuracy
+
+However, other models are difficult to fit when doing this project. For svm and neural network models, there was such a long waiting time of more than ten hours with the largest number of master and core, but the model still can’t fit. After thinking about reasons, we think that it would be so hard to apply some models because the data size is massive. We did not use binary and gradient boost models, because the dataset features are not appropriate for these models.
+
+
+# 3.Conclusion 
+The machine learning algorithms increase the success rate for sentiment analysis. Among the models used, the Naive Bayes performs best with the accuracy of 55.1%. By the increase in importance for the Internet, the significance of sentiment analysis increased to interpret huge data from day to day.
+
+For business, they can understand their customers’ opinions and needs, make better decisions and also improve the quality of items. Traditionally businesses relied on surveys, workshops and focused on groups to gain insight into their customers' feelings, but today with modern technology, they are able to harness the power of machine learning to extract meaning from text and dive into opinions of  customers and see why someone might bounce to a competitor or prefer their products.
+
+Moving forward, sentiment analysis is finding a place in marketing and predictive analysis.
+
+# 4.Future Work
+A.Adding features: For n-gram tfidf terms, NMF results　　
+a)Probably the good starting point is playing with sklearn tfidfvectorizer and using different n-gram settings and running NMF with that tfidf-matrix. 　　
+b)Another option is to use textacy (textacy.extract.ngrams).　　
+c)Run this code with Spark. Apache Spark should give us faster computation time when preprocessing data.
+
+B.Reducing features:
+a)We think we can reduce dimensionality and increase overall accuracy by reducing less important features from my dataset.
+b)We hope to use a systematic way to find these features and put additional steps to drop these features rather than finding least important features and dropping the last 50 features or 100 features after running xgboost or random forest.
+
+C.Working with bigger dataset/major category:
+a)With more products and more reviews, we believe my nlp method works better.
+b)We need better AWS instances or set up spark or hadoop to run cluster computing.
+
+# 5.Reference
+https://spark.apache.org/docs/2.3.0/ml-classification-regression.html#multinomial-logistic-regression
+https://s3.amazonaws.com/amazon-reviews-pds/readme.html
+
+# 6.Divisino of Labor
+Xin: Model tuning, EDA, and Writeup;
+Kiwi: Model building, Data Analysis, and Writeup;
+Yihan: Data cleaning, EDA, Word Tokenizing, and Writeup;
+Yachen: Model building, Model tuning, and Writeup
