@@ -23,4 +23,5 @@ Our plan is to clean the review data using regular expression tokenizer, NLTK En
 # Introduction
 The data we used is a collection of reviews written in Amazon.com marketplace and associated metadata from 1995 until 2015. It includes more than 160 million customer reviews, and it’s stored in S3 with both tsv and parquet formats. Each line of this data corresponds to an individual review. The features include marketplace, customer_id, review_id, product_id, product_parent, product_title, product_category, star_rating, helpful_votes, total_votes, vine, verified_purchase, review_headline, review_body, review_date. The product category of reviews contains PC, Kitchen, Home, Wireless, Video, Digital_Video_Games, Sports, Grocery, etc.
 
-# Me
+# Methods
+## Preparation & EDA
