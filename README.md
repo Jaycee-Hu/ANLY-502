@@ -45,3 +45,10 @@ Given the size of this dataset and the number of different categories, we decide
 
 Figure 3: Review counts for product_category
 
+
+Next, some analysis was made on the book category by using spark sql. We took a look at the most review amount books from 2005 to 2015, and we also joined the table of books with top review and the table of books with top ratings to select top books with top 100 review amount. The output is shown below.
+
+![Table 1](https://github.com/ikiwisline/ANLY-502/blob/master/images/Table%201.png)
+
+Table 1: Top rated books with top 100 review amount
+
