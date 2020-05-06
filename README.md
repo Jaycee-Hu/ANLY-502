@@ -37,3 +37,11 @@ Then, in order to investigate the distribution of different ratings stars in thi
 ![Figure 2](https://github.com/ikiwisline/ANLY-502/blob/master/images/Figure%202.png)
 
 Figure 2: Distribution of star ratings for books
+
+
+Given the size of this dataset and the number of different categories, we decided to focus on books, which has the largest number of customer reviews compared to others.
+
+![Figure 3](https://github.com/ikiwisline/ANLY-502/blob/master/images/Figure%203.png)
+
+Figure 3: Review counts for product_category
+
