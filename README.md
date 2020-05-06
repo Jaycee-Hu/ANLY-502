@@ -82,7 +82,7 @@ For business, they can understand their customers’ opinions and needs, make be
 Moving forward, sentiment analysis is finding a place in marketing and predictive analysis.
 
 # 4.Future Work
-A.Adding features: For n-gram tfidf terms, NMF results　　
+A. Adding features: For n-gram tfidf terms, NMF results　　
 
 a)Probably the good starting point is playing with sklearn tfidfvectorizer and using different n-gram settings and running NMF with that tfidf-matrix. 　　
 
@@ -90,13 +90,13 @@ b)Another option is to use textacy (textacy.extract.ngrams).　
 
 c)Run this code with Spark. Apache Spark should give us faster computation time when preprocessing data.
 
-B.Reducing features:
+B. Reducing features:
 
 a)We think we can reduce dimensionality and increase overall accuracy by reducing less important features from my dataset.
 
 b)We hope to use a systematic way to find these features and put additional steps to drop these features rather than finding least important features and dropping the last 50 features or 100 features after running xgboost or random forest.
 
-C.Working with bigger dataset/major category:
+C. Working with bigger dataset/major category:
 
 a)With more products and more reviews, we believe my nlp method works better.
 
