@@ -31,8 +31,9 @@ Before diving into training machine learning methods, we first did some explorat
 
 Figure 1:Ten-year reviews plot
 
+
 Then, in order to investigate the distribution of different ratings stars in this data, a pie chart was generated. We see that more than half of the reviews are 5 stars, so the data is imbalanced.  In our case of learning imbalanced data, the majority classes might be of our great interest. It’s desirable to have a classifier that gives high prediction accuracy over the majority class, while maintaining reasonable accuracy for the minority classes, therefore, we will leave it as it is.
 
 ![Figure 2](https://github.com/ikiwisline/ANLY-502/blob/master/images/Figure%202.png)
 
-Figure 2: D
+Figure 2: Distribution of star ratings for books
