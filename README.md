@@ -26,4 +26,6 @@ The data we used is a collection of reviews written in Amazon.com marketplace an
 # 2.Methods
 ## 2.1 Preparation & EDA
 Before diving into training machine learning methods, we first did some exploratory data analysis. We used filters to check the number of reviews for each marketplace, and decided to focus on the US market, which contains the most of the reviews out of all. Next, a time series has been plotted to observe the growth rate of reviews from 2006 to 2015. It’s clear that there’s a rapid growth of reviews after 2013.
+> ![Figure 1](images/Figure 1.png)
+> Figure 1 Ten-year review plot
 
